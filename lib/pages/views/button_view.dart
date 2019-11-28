@@ -57,7 +57,7 @@ class ButtonView extends StatelessWidget {
     print(qrResult);
 
     if(qrResult!=null)
-      BlocProvider.of<PermisoBloc>(context).add(FindPermiso(qrResult));
+      BlocProvider.of<PermisoBloc>(context).add(BuscarPermiso(qrResult));
   }
 
   void _showModalLoading(BuildContext context) async {

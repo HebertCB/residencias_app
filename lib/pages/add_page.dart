@@ -64,7 +64,6 @@ class _AddPageState extends State<AddPage> {
   void _onSubmit() {
     if(_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      if(widget.residenteObj == null)
       widget.onSave(_lugar, _motivo, _fsalida, _fentrada, _parentescoap, _ncelular, _comentarios, widget.residenteObj);
       Navigator.pop(context);
     }

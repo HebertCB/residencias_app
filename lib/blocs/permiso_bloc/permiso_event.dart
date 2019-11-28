@@ -8,10 +8,10 @@ abstract class PermisoEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FindPermiso extends PermisoEvent {
+class BuscarPermiso extends PermisoEvent {
   final String permisoId;
 
-  const FindPermiso(this.permisoId);
+  const BuscarPermiso(this.permisoId);
 
   @override
   List<Object> get props => [permisoId];

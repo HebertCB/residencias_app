@@ -59,6 +59,7 @@ class _LoginPageState extends State<LoginForm> {
           return ListView(
               children: <Widget>[
                 _crearFondo(),
+                SizedBox(height: 10.0),
                 _crearCampoEmail(state),
                 _crearCampoPassword(state),
                 SizedBox(height: 10.0,),

@@ -57,7 +57,7 @@ class Permiso extends Equatable {
     this.comentarios,
     {
     this.createdAt,
-    this.operaciones = const [],
+    this.operaciones,
     this.isOK = false,
     this.key
     }
@@ -108,7 +108,7 @@ class Permiso extends Equatable {
       "comentarios": comentarios,
       "ncelular": ncelular,
       "parentescoAp": parentescoAp,
-      "operaciones": operaciones.isEmpty ? {} : { 0: operaciones.first.toJson(), 1:{}, 2:{}, 3:{}} ,
+      "operaciones": operaciones==null ? {} : { '0': operaciones.first.toJson(), '1':{}, '2':{}, '3':{}} ,
       "isOK": isOK,
       "createdAt": Timestamp.now(),
     };

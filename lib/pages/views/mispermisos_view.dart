@@ -25,6 +25,7 @@ class MisPermisosView extends StatelessWidget {
 
   Widget _crearLista(List<Permiso> lista) {
     return ListView.builder(
+      padding: EdgeInsets.all(8.0),
       itemCount: lista.length,
       itemBuilder: (context, index) {
         final permiso = lista[index];
@@ -42,8 +43,12 @@ class MisPermisosView extends StatelessWidget {
 
   Widget _crearPermisoItem(Permiso permiso, { @required Function onTap }) {
     return Card(
+      elevation: 3.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       child: ListTile(
-        leading: Column(
+        leading: Column(       
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(DateUtils.formatDateTime(permiso.fsalida)),
@@ -60,19 +65,40 @@ class MisPermisosView extends StatelessWidget {
             ),
           ]
         ),
-        subtitle: Text(_getEstado(permiso.operaciones)),
+        subtitle: Row(
+          children: <Widget>[
+            _crearEstado(permiso.operaciones),
+          ],
+        ),
         onTap: onTap,
       ),
     );
   }
 
+  Widget _crearEstado(List<Operacion> operaciones) {
+    String label = 'Culminado';
+    Color color = Colors.grey;
+    switch(operaciones.length) {
+      case 1: label='Aprobado'; color=Colors.green; break;
+      case 2: label='Salida'; color=Colors.blue; break;
+      case 3: label='Entrada'; color=Colors.blue; break;
+    }
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5.0),
+        color: color,
+      ),
+      padding: EdgeInsets.all(1.0),
+      child: Text(label, style: TextStyle(color: Colors.white),),
+    );
+  }
+
   Widget _crearSolicitudItem(Permiso permiso, { @required Function onTap }) {
     return Card(
-      shape: StadiumBorder(
-        side: BorderSide(
-          color: Colors.black,
-          width: 2.0,
-        ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        side:BorderSide(color: Colors.grey,width: 2.0),
       ),
       elevation: 0.0,
       color: Colors.transparent,
@@ -96,14 +122,5 @@ class MisPermisosView extends StatelessWidget {
         onTap: onTap,
       ),
     );
-  }
-
-  String _getEstado(List<Operacion> operaciones) {
-    switch(operaciones.length) {
-      case 1: return 'Aprobado';
-      case 2: return 'Salida';
-      case 3: return 'Entrada';
-      default: return 'Culminado';
-    }
   }
 }
