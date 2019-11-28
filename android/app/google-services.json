@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "699122672403",
+    "firebase_url": "https://residencias-app.firebaseio.com",
+    "project_id": "residencias-app",
+    "storage_bucket": "residencias-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699122672403:android:d36e12991156d14a7a30e6",
+        "android_client_info": {
+          "package_name": "edu.upeu.residencias_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699122672403-nt6t317l6ob17qbukbduvcr3h7mnlard.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwc_pGzdmZ5J6vHf8xJDqp_B1avHYZlAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699122672403-nt6t317l6ob17qbukbduvcr3h7mnlard.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
